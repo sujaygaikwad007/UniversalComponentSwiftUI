@@ -7,18 +7,38 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F54C12A2C3BA885006F3D47 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F54C1292C3BA885006F3D47 /* CustomTextField.swift */; };
+		1F95B1452C3BB0760077FFFC /* UniversalButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F95B1442C3BB0760077FFFC /* UniversalButton.swift */; };
+		1F95B1472C3BB0E20077FFFC /* SocialLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F95B1462C3BB0E20077FFFC /* SocialLoginButton.swift */; };
+		1F95B1492C3BB1290077FFFC /* CircularImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F95B1482C3BB1290077FFFC /* CircularImageButton.swift */; };
+		1F95B14C2C3BB1BA0077FFFC /* LineTextLine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F95B14B2C3BB1BA0077FFFC /* LineTextLine.swift */; };
+		1F95B1502C3BB2B60077FFFC /* CountDownModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F95B14F2C3BB2B60077FFFC /* CountDownModel.swift */; };
+		1F95B1532C3BB34A0077FFFC /* CustomToastMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F95B1522C3BB34A0077FFFC /* CustomToastMessage.swift */; };
+		1F95B1562C3BB4800077FFFC /* NetWorkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F95B1552C3BB4800077FFFC /* NetWorkService.swift */; };
+		1F95B1582C3BB4890077FFFC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F95B1572C3BB4890077FFFC /* NetworkManager.swift */; };
 		1FF363482C3816240082AEC7 /* UniversalComponentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF363472C3816240082AEC7 /* UniversalComponentApp.swift */; };
 		1FF3634A2C3816240082AEC7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF363492C3816240082AEC7 /* ContentView.swift */; };
 		1FF3634C2C38162A0082AEC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FF3634B2C38162A0082AEC7 /* Assets.xcassets */; };
 		1FF3634F2C38162A0082AEC7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FF3634E2C38162A0082AEC7 /* Preview Assets.xcassets */; };
+		1FF363582C3817250082AEC7 /* OTPFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF363572C3817250082AEC7 /* OTPFieldView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1F54C1292C3BA885006F3D47 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		1F95B1442C3BB0760077FFFC /* UniversalButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalButton.swift; sourceTree = "<group>"; };
+		1F95B1462C3BB0E20077FFFC /* SocialLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SocialLoginButton.swift; sourceTree = "<group>"; };
+		1F95B1482C3BB1290077FFFC /* CircularImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularImageButton.swift; sourceTree = "<group>"; };
+		1F95B14B2C3BB1BA0077FFFC /* LineTextLine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineTextLine.swift; sourceTree = "<group>"; };
+		1F95B14F2C3BB2B60077FFFC /* CountDownModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDownModel.swift; sourceTree = "<group>"; };
+		1F95B1522C3BB34A0077FFFC /* CustomToastMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToastMessage.swift; sourceTree = "<group>"; };
+		1F95B1552C3BB4800077FFFC /* NetWorkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetWorkService.swift; sourceTree = "<group>"; };
+		1F95B1572C3BB4890077FFFC /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		1FF363442C3816240082AEC7 /* UniversalComponent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UniversalComponent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FF363472C3816240082AEC7 /* UniversalComponentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalComponentApp.swift; sourceTree = "<group>"; };
 		1FF363492C3816240082AEC7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		1FF3634B2C38162A0082AEC7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1FF3634E2C38162A0082AEC7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		1FF363572C3817250082AEC7 /* OTPFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPFieldView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +52,49 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F95B1432C3BB03C0077FFFC /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				1F95B1442C3BB0760077FFFC /* UniversalButton.swift */,
+				1F95B1462C3BB0E20077FFFC /* SocialLoginButton.swift */,
+				1F95B1482C3BB1290077FFFC /* CircularImageButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
+		1F95B14A2C3BB1AD0077FFFC /* Lines */ = {
+			isa = PBXGroup;
+			children = (
+				1F95B14B2C3BB1BA0077FFFC /* LineTextLine.swift */,
+			);
+			path = Lines;
+			sourceTree = "<group>";
+		};
+		1F95B14E2C3BB2A80077FFFC /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				1F95B14F2C3BB2B60077FFFC /* CountDownModel.swift */,
+			);
+			path = Timer;
+			sourceTree = "<group>";
+		};
+		1F95B1512C3BB33E0077FFFC /* Toast */ = {
+			isa = PBXGroup;
+			children = (
+				1F95B1522C3BB34A0077FFFC /* CustomToastMessage.swift */,
+			);
+			path = Toast;
+			sourceTree = "<group>";
+		};
+		1F95B1542C3BB4670077FFFC /* APIService */ = {
+			isa = PBXGroup;
+			children = (
+				1F95B1552C3BB4800077FFFC /* NetWorkService.swift */,
+				1F95B1572C3BB4890077FFFC /* NetworkManager.swift */,
+			);
+			path = APIService;
+			sourceTree = "<group>";
+		};
 		1FF3633B2C3816240082AEC7 = {
 			isa = PBXGroup;
 			children = (
@@ -51,6 +114,8 @@
 		1FF363462C3816240082AEC7 /* UniversalComponent */ = {
 			isa = PBXGroup;
 			children = (
+				1F95B1542C3BB4670077FFFC /* APIService */,
+				1FF363552C3816490082AEC7 /* Components */,
 				1FF363472C3816240082AEC7 /* UniversalComponentApp.swift */,
 				1FF363492C3816240082AEC7 /* ContentView.swift */,
 				1FF3634B2C38162A0082AEC7 /* Assets.xcassets */,
@@ -65,6 +130,27 @@
 				1FF3634E2C38162A0082AEC7 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		1FF363552C3816490082AEC7 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				1F95B1512C3BB33E0077FFFC /* Toast */,
+				1F95B14E2C3BB2A80077FFFC /* Timer */,
+				1F95B14A2C3BB1AD0077FFFC /* Lines */,
+				1F95B1432C3BB03C0077FFFC /* Buttons */,
+				1FF363562C3816600082AEC7 /* TextField */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		1FF363562C3816600082AEC7 /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				1FF363572C3817250082AEC7 /* OTPFieldView.swift */,
+				1F54C1292C3BA885006F3D47 /* CustomTextField.swift */,
+			);
+			path = TextField;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +223,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F95B1582C3BB4890077FFFC /* NetworkManager.swift in Sources */,
+				1F95B1562C3BB4800077FFFC /* NetWorkService.swift in Sources */,
+				1F54C12A2C3BA885006F3D47 /* CustomTextField.swift in Sources */,
 				1FF3634A2C3816240082AEC7 /* ContentView.swift in Sources */,
+				1F95B14C2C3BB1BA0077FFFC /* LineTextLine.swift in Sources */,
+				1FF363582C3817250082AEC7 /* OTPFieldView.swift in Sources */,
+				1F95B1452C3BB0760077FFFC /* UniversalButton.swift in Sources */,
+				1F95B1492C3BB1290077FFFC /* CircularImageButton.swift in Sources */,
+				1F95B1532C3BB34A0077FFFC /* CustomToastMessage.swift in Sources */,
+				1F95B1472C3BB0E20077FFFC /* SocialLoginButton.swift in Sources */,
 				1FF363482C3816240082AEC7 /* UniversalComponentApp.swift in Sources */,
+				1F95B1502C3BB2B60077FFFC /* CountDownModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
