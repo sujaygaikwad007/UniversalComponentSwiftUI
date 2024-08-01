@@ -16,6 +16,7 @@
 		1F95B1532C3BB34A0077FFFC /* CustomToastMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F95B1522C3BB34A0077FFFC /* CustomToastMessage.swift */; };
 		1F95B1562C3BB4800077FFFC /* NetWorkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F95B1552C3BB4800077FFFC /* NetWorkService.swift */; };
 		1F95B1582C3BB4890077FFFC /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F95B1572C3BB4890077FFFC /* NetworkManager.swift */; };
+		1FC311922C5B519E00FF3F7E /* CustomTextEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FC311912C5B519E00FF3F7E /* CustomTextEditor.swift */; };
 		1FF363482C3816240082AEC7 /* UniversalComponentApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF363472C3816240082AEC7 /* UniversalComponentApp.swift */; };
 		1FF3634A2C3816240082AEC7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF363492C3816240082AEC7 /* ContentView.swift */; };
 		1FF3634C2C38162A0082AEC7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FF3634B2C38162A0082AEC7 /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 		1F95B1522C3BB34A0077FFFC /* CustomToastMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomToastMessage.swift; sourceTree = "<group>"; };
 		1F95B1552C3BB4800077FFFC /* NetWorkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetWorkService.swift; sourceTree = "<group>"; };
 		1F95B1572C3BB4890077FFFC /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		1FC311912C5B519E00FF3F7E /* CustomTextEditor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextEditor.swift; sourceTree = "<group>"; };
 		1FF363442C3816240082AEC7 /* UniversalComponent.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UniversalComponent.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FF363472C3816240082AEC7 /* UniversalComponentApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniversalComponentApp.swift; sourceTree = "<group>"; };
 		1FF363492C3816240082AEC7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -95,6 +97,14 @@
 			path = APIService;
 			sourceTree = "<group>";
 		};
+		1FC311902C5B514800FF3F7E /* TextEditor */ = {
+			isa = PBXGroup;
+			children = (
+				1FC311912C5B519E00FF3F7E /* CustomTextEditor.swift */,
+			);
+			path = TextEditor;
+			sourceTree = "<group>";
+		};
 		1FF3633B2C3816240082AEC7 = {
 			isa = PBXGroup;
 			children = (
@@ -135,6 +145,7 @@
 		1FF363552C3816490082AEC7 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				1FC311902C5B514800FF3F7E /* TextEditor */,
 				1F95B1512C3BB33E0077FFFC /* Toast */,
 				1F95B14E2C3BB2A80077FFFC /* Timer */,
 				1F95B14A2C3BB1AD0077FFFC /* Lines */,
@@ -229,6 +240,7 @@
 				1FF3634A2C3816240082AEC7 /* ContentView.swift in Sources */,
 				1F95B14C2C3BB1BA0077FFFC /* LineTextLine.swift in Sources */,
 				1FF363582C3817250082AEC7 /* OTPFieldView.swift in Sources */,
+				1FC311922C5B519E00FF3F7E /* CustomTextEditor.swift in Sources */,
 				1F95B1452C3BB0760077FFFC /* UniversalButton.swift in Sources */,
 				1F95B1492C3BB1290077FFFC /* CircularImageButton.swift in Sources */,
 				1F95B1532C3BB34A0077FFFC /* CustomToastMessage.swift in Sources */,
