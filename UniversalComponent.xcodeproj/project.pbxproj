@@ -24,6 +24,8 @@
 		1FF363582C3817250082AEC7 /* OTPFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF363572C3817250082AEC7 /* OTPFieldView.swift */; };
 		3084140B2CC7835900D76794 /* ScratchCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3084140A2CC7835900D76794 /* ScratchCardView.swift */; };
 		30B722322D3E7BCD005361DC /* ImageUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B722312D3E7BCD005361DC /* ImageUpload.swift */; };
+		30B722392D3E7CF3005361DC /* StepToPublishPod.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 30B722382D3E7CF3005361DC /* StepToPublishPod.rtf */; };
+		30B7223D2D3E7EBB005361DC /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B7223C2D3E7EBB005361DC /* CustomView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +47,8 @@
 		1FF363572C3817250082AEC7 /* OTPFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPFieldView.swift; sourceTree = "<group>"; };
 		3084140A2CC7835900D76794 /* ScratchCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScratchCardView.swift; sourceTree = "<group>"; };
 		30B722312D3E7BCD005361DC /* ImageUpload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUpload.swift; sourceTree = "<group>"; };
+		30B722382D3E7CF3005361DC /* StepToPublishPod.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = StepToPublishPod.rtf; sourceTree = "<group>"; };
+		30B7223C2D3E7EBB005361DC /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +133,7 @@
 		1FF363462C3816240082AEC7 /* UniversalComponent */ = {
 			isa = PBXGroup;
 			children = (
+				30B722332D3E7C90005361DC /* Steps */,
 				1F95B1542C3BB4670077FFFC /* APIService */,
 				1FF363552C3816490082AEC7 /* Components */,
 				1FF363472C3816240082AEC7 /* UniversalComponentApp.swift */,
@@ -150,6 +155,7 @@
 		1FF363552C3816490082AEC7 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				30B7223A2D3E7EA5005361DC /* UIKIT */,
 				308414092CC7833C00D76794 /* Scratch Card */,
 				1FC311902C5B514800FF3F7E /* TextEditor */,
 				1F95B1512C3BB33E0077FFFC /* Toast */,
@@ -176,6 +182,30 @@
 				3084140A2CC7835900D76794 /* ScratchCardView.swift */,
 			);
 			path = "Scratch Card";
+			sourceTree = "<group>";
+		};
+		30B722332D3E7C90005361DC /* Steps */ = {
+			isa = PBXGroup;
+			children = (
+				30B722382D3E7CF3005361DC /* StepToPublishPod.rtf */,
+			);
+			path = Steps;
+			sourceTree = "<group>";
+		};
+		30B7223A2D3E7EA5005361DC /* UIKIT */ = {
+			isa = PBXGroup;
+			children = (
+				30B7223B2D3E7EAC005361DC /* CustomView */,
+			);
+			path = UIKIT;
+			sourceTree = "<group>";
+		};
+		30B7223B2D3E7EAC005361DC /* CustomView */ = {
+			isa = PBXGroup;
+			children = (
+				30B7223C2D3E7EBB005361DC /* CustomView.swift */,
+			);
+			path = CustomView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -237,6 +267,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FF3634F2C38162A0082AEC7 /* Preview Assets.xcassets in Resources */,
+				30B722392D3E7CF3005361DC /* StepToPublishPod.rtf in Resources */,
 				1FF3634C2C38162A0082AEC7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -249,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F95B1582C3BB4890077FFFC /* NetworkManager.swift in Sources */,
+				30B7223D2D3E7EBB005361DC /* CustomView.swift in Sources */,
 				1F95B1562C3BB4800077FFFC /* NetWorkService.swift in Sources */,
 				1F54C12A2C3BA885006F3D47 /* CustomTextField.swift in Sources */,
 				1FF3634A2C3816240082AEC7 /* ContentView.swift in Sources */,
