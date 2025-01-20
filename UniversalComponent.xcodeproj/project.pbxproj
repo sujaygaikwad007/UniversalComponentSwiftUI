@@ -23,6 +23,7 @@
 		1FF3634F2C38162A0082AEC7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FF3634E2C38162A0082AEC7 /* Preview Assets.xcassets */; };
 		1FF363582C3817250082AEC7 /* OTPFieldView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FF363572C3817250082AEC7 /* OTPFieldView.swift */; };
 		3084140B2CC7835900D76794 /* ScratchCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3084140A2CC7835900D76794 /* ScratchCardView.swift */; };
+		30B722322D3E7BCD005361DC /* ImageUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30B722312D3E7BCD005361DC /* ImageUpload.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +44,7 @@
 		1FF3634E2C38162A0082AEC7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		1FF363572C3817250082AEC7 /* OTPFieldView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPFieldView.swift; sourceTree = "<group>"; };
 		3084140A2CC7835900D76794 /* ScratchCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScratchCardView.swift; sourceTree = "<group>"; };
+		30B722312D3E7BCD005361DC /* ImageUpload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageUpload.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,6 +97,7 @@
 			children = (
 				1F95B1552C3BB4800077FFFC /* NetWorkService.swift */,
 				1F95B1572C3BB4890077FFFC /* NetworkManager.swift */,
+				30B722312D3E7BCD005361DC /* ImageUpload.swift */,
 			);
 			path = APIService;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				1F95B14C2C3BB1BA0077FFFC /* LineTextLine.swift in Sources */,
 				1FF363582C3817250082AEC7 /* OTPFieldView.swift in Sources */,
 				1FC311922C5B519E00FF3F7E /* CustomTextEditor.swift in Sources */,
+				30B722322D3E7BCD005361DC /* ImageUpload.swift in Sources */,
 				3084140B2CC7835900D76794 /* ScratchCardView.swift in Sources */,
 				1F95B1452C3BB0760077FFFC /* UniversalButton.swift in Sources */,
 				1F95B1492C3BB1290077FFFC /* CircularImageButton.swift in Sources */,
