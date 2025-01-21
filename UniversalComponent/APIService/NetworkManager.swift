@@ -1,199 +1,83 @@
 import Foundation
 
+enum HTTPMethod:String{
+    case get = "GET"
+    case post = "POST"
+    case patch = "PATCH"
+    case put = "PUT"
+    case delete = "DELETE"
+}
+enum NetworkError: Error,LocalizedError{
+    case invalidURL
+    case invalidResponse
+    case noData
+    case decodingError
+    case custom(String)
+
+    var errorDescription: String?{
+        switch self{
+        case .invalidURL: return "Invalid URL"
+        case .invalidResponse: return "Invalid response from server"
+        case .noData: return "No data received"
+        case .decodingError: return "Failed to decode data"
+        case .custom(let message): return message
+
+        }
+    }
+}
 class NetworkManager {
     
-    private let networkService = NetworkService()
-    
-    // Generic GET request
-    func performGETRequest<T: Codable>(urlString: String, responseType: T.Type, completion: @escaping (Result<T, Error>) -> Void) {
-        networkService.request(urlString: urlString, method: .get) { (result: Result<T, Error>) in
-            DispatchQueue.main.async {
-                completion(result)
-            }
+    static let shared = NetworkManager()
+    private init() {}
+
+    func request<T:Codable>(
+        urlString : String,
+        method: HTTPMethod = .get,
+        header:[String:String]? = nil,
+        body:Data?=nil,
+        responseType:T.Type,
+        completion: @escaping(Result<T,NetworkError>) -> Void
+
+    ){
+        guard let url = URL(string: urlString) else{
+            completion(.failure(.invalidURL))
+            return
         }
-    }
-    
-    // Generic POST request
-    func performPostRequest<T: Codable>(urlString: String, method: HTTPMethod, requestBody: Data? = nil, responseType: T.Type, completion: @escaping (Result<T, Error>) -> Void) {
-        networkService.request(urlString: urlString, method: method, requestBody: requestBody) { (result: Result<T, Error>) in
-            DispatchQueue.main.async {
-                completion(result)
+
+        var request = URLRequest(url: url)
+        request.httpMethod = method.rawValue
+        request.allHTTPHeaderFields = header
+        request.httpBody = body
+
+        URLSession.shared.dataTask(with: request){ data,response,error in
+
+            if let error = error {
+                completion(.failure(.custom(error.localizedDescription)))
+                return
             }
-        }
-    }
-    
-    // Generic PATCH request
-    func performPatchRequest<T: Codable>(urlString: String, requestBody: Data? = nil, responseType: T.Type, completion: @escaping (Result<T, Error>) -> Void) {
-        networkService.request(urlString: urlString, method: .patch, requestBody: requestBody) { (result: Result<T, Error>) in
-            DispatchQueue.main.async {
-                completion(result)
+
+            guard let httpResponse = response as? HTTPURLResponse,(200...299).contains(httpResponse.statusCode) else {
+                completion(.failure(.invalidResponse))
+                return
             }
-        }
+
+            guard let data = data else{
+                completion(.failure(.noData))
+                return
+            }
+
+            do {
+                let decodeData = try JSONDecoder().decode(responseType, from: data)
+                completion(.success(decodeData))
+            } catch {
+                if let jsonString = String(data: data, encoding: .utf8) {
+                    print("Raw JSON Response: \(jsonString ?? "")")
+                }
+                completion(.failure(.decodingError))
+            }
+
+
+        }.resume()
     }
-    
-    
+
 }
-
-
-///Below code show you how to call API
-
-//class OnboardingViewModel: ObservableObject {
-//    @Published var userResponse: RegisterUserResponse?
-//    @Published var dropDownValues: DropDownValues?
-//    @Published var emailSignUp : EmailVerifyResponse?
-//    @Published var verifyOtpResponse : VerifyOtpResponse?
-//    @Published var resendOtpResponse : ResendOtpResponse?
-//    @Published var nameLastNameResponse : NameLastNameResponse?
-//
-//    @Published var errorMessage: String?
-//
-//    private let networkManager = NetworkManager()
-//
-//    // to login with Google and Apple
-//    func loginWithGoogleAndApple(email: String, firstName: String, lastName: String) {
-//        let userRequest = RegisterUserRequest(email: email, firstName: firstName, lastName: lastName)
-//
-//        do {
-//            let requestBody = try JSONEncoder().encode(userRequest)
-//            networkManager.performPostRequest(urlString: APIEndpoint.googleLogin, method: .post, requestBody: requestBody, responseType: RegisterUserResponse.self) { [weak self] result in
-//                switch result {
-//                case .success(let response):
-//                    self?.userResponse = response
-//                    print("User logged in successfully: \(response.message)")
-//                    print("Token: \(response.data?.token ?? "")")
-//                case .failure(let error):
-//                    self?.errorMessage = error.localizedDescription
-//                    print("Error: \(error.localizedDescription)")
-//                }
-//            }
-//        } catch {
-//            print("Failed to encode request loginWithGoogleAndApple: \(error.localizedDescription)")
-//        }
-//    }
-//
-//
-//    //Signup method
-//    func signUpUser(email: String, password: String, completion: @escaping (Bool) -> Void) {
-//
-//        let signUpRequest = signUpRequest(email: email, password: password)
-//
-//        do {
-//            let requestBody = try JSONEncoder().encode(signUpRequest)
-//            networkManager.performPostRequest(urlString: APIEndpoint.signUp, method: .post, requestBody: requestBody, responseType: EmailVerifyResponse.self) { [weak self] result in
-//                switch result {
-//                case .success(let response):
-//                    self?.emailSignUp = response
-//                    print("SignUp message----\(response.message ?? "")")
-//                    print("SignUp Status----\(response.status ?? false)")
-//                    completion(response.status ?? false)
-//                case .failure(let error):
-//                    self?.errorMessage = error.localizedDescription
-//                    print("Error: \(error.localizedDescription)")
-//                    completion(false)
-//                }
-//            }
-//        } catch {
-//            print("Failed to encode request signUpUser: \(error.localizedDescription)")
-//            completion(false)
-//        }
-//    }
-//
-//    //Otp verify
-//    func verifyOtp(email: String, otp: String, completion: @escaping (Bool) -> Void) {
-//
-//        let otpRequest  = OtpRequest(email: email, otp: otp)
-//
-//        do {
-//            let requestBody = try JSONEncoder().encode(otpRequest)
-//            networkManager.performPostRequest(urlString: APIEndpoint.emailVerification, method: .post, requestBody: requestBody, responseType: VerifyOtpResponse.self) { [weak self] result in
-//                switch result {
-//                case .success(let response):
-//                    self?.verifyOtpResponse = response
-//                    print("verifyOtp message----\(response.message ?? "")")
-//                    print("verifyOtp Status----\(response.status ?? false)")
-//                    completion(response.status ?? false)
-//                case .failure(let error):
-//                    self?.errorMessage = error.localizedDescription
-//                    print("Error: \(error.localizedDescription)")
-//                    completion(false)
-//                }
-//            }
-//        } catch {
-//            print("Failed to encode request verifyOtp: \(error.localizedDescription)")
-//            completion(false)
-//        }
-//    }
-//
-//
-//    //Resend Otp
-//    func resendOtp(email: String) {
-//        let resendOtpRequest = ResendOtpRequest(email: email)
-//
-//        do {
-//            let requestBody = try JSONEncoder().encode(resendOtpRequest)
-//            networkManager.performPostRequest(urlString: APIEndpoint.resendOTP, method: .post, requestBody: requestBody, responseType: ResendOtpResponse.self) { [weak self] result in
-//                switch result {
-//                case .success(let response):
-//                    self?.resendOtpResponse = response
-//                    print("Resend otp Staus---- \(response.status ?? false)")
-//                    print("Resend otp message---- \(response.message ?? "")")
-//
-//                case .failure(let error):
-//                    self?.errorMessage = error.localizedDescription
-//                    print("Error: \(error.localizedDescription)")
-//                }
-//            }
-//        } catch {
-//            print("Failed to encode request resendOtp: \(error.localizedDescription)")
-//        }
-//    }
-//
-//
-//    //Name and last Name
-//    func firstNameLastName(firstName: String, lastName: String, completion: @escaping (Bool) -> Void) {
-//
-//        let firstNameLastNameRequest = NameLastNameRequest(firstName: firstName, lastName: lastName)
-//
-//        do {
-//            let requestBody = try JSONEncoder().encode(firstNameLastNameRequest)
-//            networkManager.performPatchRequest(urlString: APIEndpoint.registerUser, requestBody: requestBody, responseType: NameLastNameResponse.self) { [weak self] result in
-//                switch result {
-//                case .success(let response):
-//                    self?.nameLastNameResponse = response
-//                    print("firstNameLastName message----\(response.message ?? "")")
-//                    print("firstNameLastName Status----\(response.status ?? false)")
-//                    completion(response.status ?? false)
-//                case .failure(let error):
-//                    self?.errorMessage = error.localizedDescription
-//                    print("Error: \(error.localizedDescription)")
-//                    completion(false)
-//                }
-//            }
-//        } catch {
-//            print("Failed to encode request firstNameLastName: \(error.localizedDescription)")
-//            completion(false)
-//        }
-//    }
-//
-//
-//
-//
-//    // Fetch dropdown values
-//    func fetchDropDownValues() {
-//        networkManager.performGETRequest(urlString: APIEndpoint.dropdownValues, responseType: DropDownValues.self) { [weak self] result in
-//            switch result {
-//            case .success(let response):
-//                self?.dropDownValues = response
-//                print("Dropdown values received successfully:")
-//                print("Status: \(response.status ?? false)")
-//                print("Message: \(response.message ?? "")")
-//            case .failure(let error):
-//                self?.errorMessage = error.localizedDescription
-//                print("Error: \(error.localizedDescription)")
-//            }
-//        }
-//    }
-//
-//
-//}
-
